@@ -20,6 +20,9 @@
 
 	</header>
 	<section class="hero">
+		
+	</section>
+	<section class="darkgrey">
 		<div class="whatwedo">
 			<div class="whatwedo__wrap">
 				<div class="whatwedo__item">
@@ -43,7 +46,6 @@
 			</div>
 		</div>
 	</section>
-	<section class="darkgrey"></section>
 
 	<section class="we-are-alike">
 		<h2>Мы похожи!</h2>
@@ -83,57 +85,51 @@
 
 	<section class="aboutyou">
 		<h2>Теперь расскажите о себе</h2>
-		<form method="post" id="form_id" onsubmit="javascript:return validate('form_id','email')&&ValidPhone();">
+		<form id="form_id" onsubmit="return ValidName()&&ValidPhone()">
+
 			<div class="title">
 				<span class="number">1</span>
 				<label>Фамилия и имя</label>
-			</div><br>
-					<input class="fullName" type="text" placeholder="Сидоров Александр">
+			</div>
+			<div class="input-item">
+				<input class="fullName" type="text" required placeholder="Сидоров Александр">
+				<span class="nameError">Поле имени не должно быть пустым или содержать цифры!</span>
+			</div>
+			
 							
 				
 			<div class="title">
 				<span class="number">2</span>
 				<label>Электронная почта</label>
-			</div><br>
-					<input id="email" type="email" placeholder="Sidorov@yandex.ru">
+			</div>
+			<div class="input-item">
+				<input id="email" type="email" required placeholder="Sidorov@yandex.ru">
+			</div>
 							
 				
 			<div class="title">
 				<span class="number">3</span>
 				<label>Телефон</label>
-			</div><br>
-					<input id="phone" type="phone" placeholder="+7 (999)-328-14-20">
+			</div>
+			<div class="input-item">
+				<input id="phone" type="tel" required placeholder="+7 (999)-328-14-20">
+				<p id="message" ></p> 
+			</div>
 					
 			<div class="title">
 				<span class="number">4</span>
-				<label>Какой деятельностью, не связанной с текущими проектами, <br>вы бы хотели заниматься в рабочее время? </label>
-			</div><br>
-					<textarea class="textarea" placeholder="Свой проект по созданию универсальной инфраструктуры строительства"></textarea>
+				<label>Какой деятельностью, не связанной с текущими проектами, вы бы хотели заниматься в рабочее время? </label>
+			</div>
+			<div class="input-item">
+				<textarea class="textarea" required placeholder="Свой проект по созданию универсальной инфраструктуры строительства"></textarea>
+			</div>
 					
 			<button class="btn" type="submit">Отправить</button>
+			<p id="message" ></p> 
 		</form>
 	</section>
 
-	<script async defer>
-		function validate(form_id,email) {
-		   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;   
-		   var address = document.forms[form_id].elements[email].value;
-		   if(reg.test(address) == false) {
-		      alert('Введите корректный e-mail');
-		      return false;
-		   }
-		}
-
-		function ValidPhone() {
-		    var re = /^\d[\d\(\)\ -]{4,14}\d$/;
-		    var myPhone = document.getElementById('phone').value;
-		    var valid = re.test(myPhone);
-		    if (valid) output = 'Номер телефона введен правильно!';
-		    else output = 'Номер телефона введен неправильно!';
-		    document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br />'+output;
-		    return valid;
-		}  
-	</script>
+	<script src="js/main.js"></script>
 	
 </body>
 </html>

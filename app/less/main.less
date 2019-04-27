@@ -99,12 +99,10 @@ html {
 .hero {
 	background: url(../img/header-bg.jpg) no-repeat center;
 	background-size: cover;
-	width: 1440px;
-	height: 600px;
-	
+	max-width: 1440px;
+	height: 600px;	
 	margin-top: 126px;
 	margin: 0 auto;
-
 }
 
 /*
@@ -123,7 +121,8 @@ html {
 	.whatwedo {
 		max-width: 972px;
 		background-color: transparent;		
-		margin: -100px auto 100px auto;	
+		margin: -100px auto 100px auto;
+		.xsm(margin, -170px auto 100px auto);
 		width: 100%;
 		height: 464px;
 		.xsm(height, 200px);
@@ -134,7 +133,7 @@ html {
 		&__wrap {
 			display: flex;
 			justify-content: center;
-			.xsm(flex-direction, column);
+			.xsm(flex-direction, column);			
 			align-items: center;			
 			background-color: #fff;
 			.whatwedo__item {
@@ -298,6 +297,7 @@ html {
 						
 			.number {
 				width: 64px;
+				min-width: 64px;
 				height: 64px;
 				border: 1px solid rgba(#ffffff, 0.23);
 				color: @orange;
@@ -318,6 +318,7 @@ html {
 				font-family: DINPro, sans-serif;
 				margin-bottom: 30px;
 				margin-top: 30px;
+				margin-right: 20px;
 				display: flex;
 			}
 		}
